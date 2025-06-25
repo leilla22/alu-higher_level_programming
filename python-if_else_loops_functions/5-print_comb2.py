@@ -1,4 +1,6 @@
-#!/usr/bin/python34
+#!/usr/bin/python3
 for i in range(0, 100):
-    print(f"{i:02}", end=", " if i < 99 else "")
-print()
+    if i <= 98:
+        print("{:02d}".format(i), end=", ")
+    else:
+        print(99)
