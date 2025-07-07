@@ -43,9 +43,23 @@ class Rectangle:
         return r_area
 
     def perimeter(self):
+        """Returns the perimeter of the rectangle"""
         r_perimeter = 2 * (self.__width + self.__height)
 
         if self.__width == 0 or self.__height == 0:
             return 0
         else:
             return r_perimeter
+
+    def __str__(self):
+        """Prints the rectangle using #"""
+        if self.__width == 0 or self.__height == 0:
+            return ''
+        else:
+            rect = ''
+            for i in range(self.__height):
+                for x in range(self.__width):
+                    rect = rect + '#'
+
+                rect += '\n'
+            return rect[:-1]
