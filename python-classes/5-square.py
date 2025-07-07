@@ -3,13 +3,13 @@
 
 
 class Square:
-    """ Creating a private instance """
+    """ creating a private instance attribute """
 
     def __init__(self, size=0):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
-            raise ValueError("size must be greater than or equal to 0")
+            raise ValueError("size must be greater than or equal to  0")
         else:
             self.__size = int(size)
 
@@ -31,3 +31,10 @@ class Square:
             raise ValueError("size must be greater than or equal to 0")
         else:
             self.__size = value
+
+    def my_print(self):
+        if self.__size == 0:
+            print("")
+        else:
+            for i in range(self.__size):
+                print("#" * self.size)
