@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" Defines a rectangle """
+"""Defines a rectangle"""
 
 
 class Rectangle:
-    """ Defines a rectangle """
+    """Defines a rectangle"""
 
     def __init__(self, width=0, height=0):
-        """Initialize the variables"""
+        """initializes the data"""
         self.width = width
         self.height = height
 
@@ -63,3 +63,7 @@ class Rectangle:
 
                 rect += '\n'
             return rect[:-1]
+
+    def __repr__(self):
+        """Prints the string representation of the rectangle officially"""
+        return "Rectangle({}, {})".format(self.__width, self.__height)
