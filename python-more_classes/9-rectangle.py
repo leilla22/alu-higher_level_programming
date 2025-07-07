@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/python3
 """ Defines the rectangle """
 
 
@@ -66,6 +66,11 @@ class Rectangle:
         else:
             return r_perimeter
 
+    @classmethod
+    def square(cls, size=0):
+        """returns a new rectangle instance with width == height == size"""
+        return cls(size, size)
+
     def __del__(self):
         """Detects the deletion of an instance and returns bye when deleted"""
         print("Bye rectangle...")
@@ -86,4 +91,4 @@ class Rectangle:
 
     def __repr__(self):
         """Prints the string representation officially"""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(self.__width, self._height)
