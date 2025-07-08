@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-'''creates a subclass Square from Rectangle'''
+'''creates a new subclass from rectangle'''
 
 
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    '''defines a new class Square from inheritance of Rectangle'''
+    '''class that defines a Square from Rectangle Class'''
 
     def __init__(self, size):
         '''initialize variables'''
@@ -15,5 +15,9 @@ class Square(Rectangle):
         super().__init__(self.__size, self.__size)
 
     def area(self):
-        '''method to return the string with the area'''
+        '''Method to return the area'''
         return self.__size ** 2
+
+    def __str__(self):
+        '''special method that returns a printable string'''
+        return f"[Square] {self.__size}/{self.__size}"
