@@ -31,3 +31,8 @@ class Student:
                 if item in context.keys():
                     cont[item] = context[item]
             return cont
+
+    def reload_from_json(self, json):
+        '''reload_from_json'''
+        for item in json.keys():
+            self.__dict__[item] = json[item]
