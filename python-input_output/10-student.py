@@ -14,11 +14,20 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         '''returns a dict rep of the data'''
         context = {
             'first_name': self.first_name,
             'last_name': self.last_name,
             'age': self.age
         }
-        return context
+        if attrs is None or type(attrs) != list:
+            return context
+        else:
+            cont = {}
+            for item in attrs:
+                if type(item) != str:
+                    return context
+                if item in context.keys():
+                    cont[item] = context[item]
+            return cont
