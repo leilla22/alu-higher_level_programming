@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""
-Module 4-hbtn_status.py
-"""
-
+"""Fetches https://alu-intranet.hbtn.io/status using requests"""
 import requests
 
+url = 'https://alu-intranet.hbtn.io/status'
+response = requests.get(url)
 
-if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status")
-    print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+print("Body response:")
+print("\t- type: {}".format(type(response.text)))
+print("\t- content: {}".format(response.text))
