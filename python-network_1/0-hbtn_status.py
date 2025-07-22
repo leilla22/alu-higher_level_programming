@@ -26,4 +26,3 @@ if __name__ == "__main__":
     target_url = "https://alu-intranet.hbtn.io/status"
     print(f"Fetching status from: {target_url}")
     fetch_status(target_url)
-
