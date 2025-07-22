@@ -1,28 +1,17 @@
 #!/usr/bin/python3
 import urllib.request
 
-def fetch_status(url):
-    """
-    Fetches the content from the given URL and prints it with a tab.
+url = 'https://intranet.hbtn.io/status'
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+    '\n    AppleWebKit/537.36 (KHTML, like Gecko)'
+    '\n    Chrome/99.0.4844.84 Safari/537.36',
+}
 
-    Args:
-        url (str): The URL to fetch.
-    """
-    try:
-        # Use a with statement to ensure the response is properly closed
-        with urllib.request.urlopen(url) as response:
-            # Read the entire response body
-            body = response.read().decode('utf-8')
-            # Print each line of the body with a tab before it
-            for line in body.splitlines():
-                print(f"\t- {line}")
-    except urllib.error.URLError as e:
-        print(f"Error fetching URL: {e.reason}")
-    except Exception as e:
-        print(f"An unexpected error occurred: {e}")
-
-if __name__ == "__main__":
-    # The URL to fetch
-    target_url = "https://alu-intranet.hbtn.io/status"
-    print(f"Fetching status from: {target_url}")
-    fetch_status(target_url)
+req = urllib.request.Request(url, headers=headers)
+with urllib.request.urlopen(req) as response:
+    content = response.read()
+    print("Body response:")
+    print("\t- type:", type(content))
+    print("\t- content:", content)
+    print("\t- utf8 content:", content.decode("utf-8"))
