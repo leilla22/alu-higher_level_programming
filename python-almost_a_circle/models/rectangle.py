@@ -91,8 +91,13 @@ class Rectangle(Base):
         Prints the Rectangle instance to stdout with the character '#'.
         Does not handle x and y offsets.
         """
+        # Print y newlines for vertical offset
+        for _ in range(self.__y):
+            print()
+
+        # Print the rectangle rows with x spaces for horizontal offset
         for _ in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """
