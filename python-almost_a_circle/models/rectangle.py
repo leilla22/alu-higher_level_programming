@@ -17,10 +17,10 @@ class Rectangle(Base):
             id (int): The identity of the rectangle.
         """
         super().__init__(id)
-        self.width = width #  Uses the setter for validation
-        self.height = height #  Uses the setter for validation
-        self.x = x #  Uses the setter for validation
-        self.y = y #  Uses the setter for validation
+        self.width = width  # Uses the setter for validation
+        self.height = height  # Uses the setter for validation
+        self.x = x  # Uses the setter for validation
+        self.y = y  # Uses the setter for validation
 
     # Width
     @property
@@ -81,6 +81,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    def  area(self):
+   def area(self):
         """Returns the area of the rectangle."""
         return self.width * self.height
