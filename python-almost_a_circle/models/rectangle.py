@@ -131,3 +131,15 @@ class Rectangle(Base):
                 self.x = args[3]
             if num_args >= 5:
                 self.y = args[4]
+        elif kwargs:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
