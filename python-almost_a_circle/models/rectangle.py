@@ -17,18 +17,20 @@ class Rectangle(Base):
             id (int): The identity of the rectangle.
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.width = width # Uses the setter for validation
+        self.height = height # Uses the setter for validation
+        self.x = x # Uses the setter for validation
+        self.y = y # Uses the setter for validation
 
     # Width
     @property
     def width(self):
+        """Getter for the width attribute."""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setter for the width attribute with validation."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -38,10 +40,12 @@ class Rectangle(Base):
     # Height
     @property
     def height(self):
+        """Getter for the height attribute."""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setter for the height attribute with validation."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -51,10 +55,12 @@ class Rectangle(Base):
     # X
     @property
     def x(self):
+        """Getter for the x attribute."""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Setter for the x attribute with validation."""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -64,16 +70,18 @@ class Rectangle(Base):
     # Y
     @property
     def y(self):
+        """Getter for the y attribute."""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Setter for the y attribute with validation."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-     def area(self):
+    def area(self):
         """Returns the area of the rectangle."""
         return self.width * self.height
 
