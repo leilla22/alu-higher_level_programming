@@ -43,3 +43,9 @@ class Square(Rectangle):
                 dct[keys[i]] = args[i]
         else:
             dct = kwargs
+        if len(dct) > 0:
+            for key, value in dct.items():
+                if key == 'id' and value is None:
+                    self.__init__(self.size, self.x, self.y)
+                else:
+                    setattr(self, key, value)
