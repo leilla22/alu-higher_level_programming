@@ -17,7 +17,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Querying and displaying cities with their states
-    results = session.query(City, State).join(State, City.state_id == State.id).order_by(City.id).all()
+    results = session.query(City, State).join(State).order_by(City.id).all()
 
     for city, state in results:
         print(f"{state.name}: ({city.id}) {city.name}")
